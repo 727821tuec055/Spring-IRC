@@ -10,7 +10,7 @@ public class ClassEx1 {
 	@ResponseBody
 	public String hi()
 	{
-		return "Have a nice day!";
+		return "Have a nice day!!";
 	}
 	
 

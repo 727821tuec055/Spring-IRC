@@ -9,7 +9,7 @@ public class ClassEx2 {
 	@GetMapping("/setname")
 	public String getName()
 	{
-		return "Have a nice day!"+name;
+		return "Have a Great day!"+name;
 	}
 
 }

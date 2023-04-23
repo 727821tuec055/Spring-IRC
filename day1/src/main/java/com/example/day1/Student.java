@@ -11,7 +11,7 @@ public class Student {
 	@ResponseBody
 	public String display()
 	{
-		return "Good Morning";
+		return "Good Morning!";
 	}
 
 }
