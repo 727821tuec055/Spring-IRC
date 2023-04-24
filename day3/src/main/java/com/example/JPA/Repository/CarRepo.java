@@ -1,5 +1,6 @@
 package com.example.JPA.Repository;
-
-public class CarRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.example.JPA.Model.CarModel;
+public interface CarRepo extends JpaRepository<CarModel ,Integer> {
 
 }
