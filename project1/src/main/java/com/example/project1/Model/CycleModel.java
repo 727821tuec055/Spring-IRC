@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 public class CycleModel {
 @Id
 @Column(name="cid")
-          private int cid;
+         private int cid;
          private String cname;
          private int cnum;
          private  String caddress;

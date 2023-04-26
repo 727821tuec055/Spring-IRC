@@ -1,6 +1,9 @@
 package com.example.project1.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.example.project1.Model.CycleModel;
@@ -30,5 +33,12 @@ public class CycleService {
 		// TODO Auto-generated method stub
 		return crepo.saveAndFlush(id);
 	}
-
+    public List<CycleModel> sortDesc(String cname)
+    {
+    	return crepo.findAll(Sort.by(cname).ascending());
+    }
+    public List<CycleModel> sortDescs(String cname)
+    {
+    	return crepo.findAll(Sort.by(cname).descending());
+    }
 }

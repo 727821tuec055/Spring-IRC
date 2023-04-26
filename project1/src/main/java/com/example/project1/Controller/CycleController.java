@@ -1,5 +1,6 @@
 package com.example.project1.Controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,5 +49,16 @@ public class CycleController {
 		{
 			return cser.updatedetails(id);
 		}
-	
+	//sort by ascending order
+	@GetMapping("sortDesc/{cname}")
+	public List<CycleModel>sortPerson(@PathVariable("cname") String cname)
+	{
+		return cser.sortDesc(cname);
+	}
+	//sort by descending order
+	@GetMapping("sortDescs/{cname}")
+	public List<CycleModel>sortPersons(@PathVariable("cname") String cname)
+	{
+		return cser.sortDescs(cname);
+	}
 }
