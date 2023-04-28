@@ -1,7 +1,6 @@
 package com.example.project1.Model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+	import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -9,7 +8,7 @@ import jakarta.persistence.Table;
 @Table(name="cycleshowroom")
 public class CycleModel {
 @Id
-@Column(name="cid")
+
          private int cid;
          private String cname;
          private int cnum;
@@ -20,6 +19,29 @@ public class CycleModel {
          private int cycleamount;
          private String cddate;
          private String cpay;
+         
+         public int getUserid() {
+			return userid;
+		}
+		public void setUserid(int userid) {
+			this.userid = userid;
+		}
+		public String getUsername() {
+			return username;
+		}
+		public void setUsername(String username) {
+			this.username = username;
+		}
+		public String getPassword() {
+			return password;
+		}
+		public void setPassword(String password) {
+			this.password = password;
+		}
+		private int userid;
+         private String username;
+         private String password;
+         
 		public int getCid() {
 			return cid;
 		}

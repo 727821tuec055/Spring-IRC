@@ -3,6 +3,8 @@ package com.example.project1.Service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -41,4 +43,43 @@ public class CycleService {
     {
     	return crepo.findAll(Sort.by(cname).descending());
     }
+
+	public List<CycleModel> paginationAndSorting(int png, int pgs, String cname) {
+		// TODO Auto-generated method stub
+		Page<CycleModel>p=crepo.findAll(PageRequest.of(png,pgs,Sort.by(cname).descending()));
+		return p.getContent();
+	}
+
+	public List<CycleModel> paginationData(int png, int pgs) {
+		// TODO Auto-generated method stub
+		Page<CycleModel>p=crepo.findAll(PageRequest.of(png,pgs));
+		return p.getContent();
+	}
+ public String checklogin(String username,String password)
+ {
+	 CycleModel user=crepo.findByUsername(username);
+			 if(user==null)
+			 {
+				 return "No User Found";
+			 }
+			 else
+			 {
+				 if(user.getPassword().equals(password))
+				 {
+					 return "Login Successfully";
+				 }
+				 else
+				 {
+					 return "Login Failed";
+				 }
+			 }
+ }
+	public CycleModel adduser(CycleModel cycle)
+	{
+		return crepo.save(cycle);
+	}
+	public List<CycleModel>getuser()
+	{
+		return crepo.findAll();
+	}
 }
