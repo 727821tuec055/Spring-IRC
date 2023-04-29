@@ -1,7 +1,6 @@
 package com.example.project1.Controller;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,15 +23,7 @@ public class CycleController {
 	@Autowired
 	public CycleService cser;
 	//login
-	@PostMapping("/login")
-	public String login(@RequestBody Map<String,String> logindata)
-	{
-		String username=logindata.get("username");
-		String password=logindata.get("password");
-		String result=cser.checklogin(username, password);
-		return result;
-		
-	}
+	
 	
 	//post the details
 	

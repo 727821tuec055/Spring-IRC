@@ -55,31 +55,5 @@ public class CycleService {
 		Page<CycleModel>p=crepo.findAll(PageRequest.of(png,pgs));
 		return p.getContent();
 	}
- public String checklogin(String username,String password)
- {
-	 CycleModel user=crepo.findByUsername(username);
-			 if(user==null)
-			 {
-				 return "No User Found";
-			 }
-			 else
-			 {
-				 if(user.getPassword().equals(password))
-				 {
-					 return "Login Successfully";
-				 }
-				 else
-				 {
-					 return "Login Failed";
-				 }
-			 }
- }
-	public CycleModel adduser(CycleModel cycle)
-	{
-		return crepo.save(cycle);
-	}
-	public List<CycleModel>getuser()
-	{
-		return crepo.findAll();
-	}
+
 }

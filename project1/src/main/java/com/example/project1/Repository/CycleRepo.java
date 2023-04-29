@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 import com.example.project1.Model.CycleModel;
 public interface CycleRepo extends JpaRepository<CycleModel, Integer> 
 {
-    CycleModel findByUsername(String username);
+    
     @Query(value="Select * from cycleshowroom",nativeQuery=true)
 	public List<CycleModel> getAllData();
 	
