@@ -97,6 +97,17 @@ public class CycleController {
 	{
 		return csr.startEnd(start,end);
 	}
+	@DeleteMapping("/deletebyid/{id}/{name}")
+		public String deletePerson(@PathVariable("id")int id,@PathVariable("name") String name)
+		{
+			csr.deleteId(id,name);
+			return "deleted";
+		}
+	@PutMapping("/updatequery/{id}/{name}")
+	public void updateByQuery(@PathVariable("id")int id,@PathVariable("name")String name)
+	{
+	csr.updateByQuery(id,name);	
+	}
+	}
 	
 	
-}

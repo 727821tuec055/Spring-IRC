@@ -19,7 +19,7 @@ public class LoginController {
 	{
 		String name=logindata.get("name");
 		String pwd=logindata.get("pwd");
-		String result=service.checklogin(name, pwd);
+		String result=service.checkLogin(name, pwd);
 		return result;
 		
 	}

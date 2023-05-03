@@ -11,8 +11,7 @@ import com.example.project1.Repository.LoginRepo;
 public class LoginService {
 	@Autowired
 	private LoginRepo repol;
-
-	public String checklogin(String name,String pwd)
+	public String checkLogin(String name, String pwd)
 	 {
 		 LoginModel user=repol.findByname(name);
 				 if(user==null)
@@ -45,5 +44,6 @@ public class LoginService {
 			// TODO Auto-generated method stub
 			return repol.save(id);
 		}
+		
+		}
 
-}
