@@ -108,6 +108,36 @@ public class CycleController {
 	{
 	csr.updateByQuery(id,name);	
 	}
-	}
 	
+
+    // get by name using query
+     @GetMapping("/jpqlget/{name}")
+     public List<CycleModel>getdetailname(@PathVariable("name")String name)
+     {
+    	 return csr.getjpqlname(name);
+    	 
+     }
+     //query for getting the details by name
+     @GetMapping("/getbtw/{start}/{end}")
+     public List<CycleModel>getbtw(@PathVariable("start")int start,@PathVariable("end")int end)
+     {
+    	 return csr.getbtw(start,end);
+     }
+     // delete by query using id
+     @DeleteMapping("/deletejpql/{id}")
+     public String deletejpqlid(@PathVariable("id")int id)
+     {
+    	 csr.deletejpqlid(id);
+    	 return "Deleted Successfully using jpql query !";
+    	 
+     }
+     
+     //update the query
+     @PutMapping("/updatejpql/{a}/{b}")
+     public void updatejpql(@PathVariable("a")String a,@PathVariable("b")int b)
+     {
+    	 csr.updatejpql(a,b);
+     }
+          
+}
 	

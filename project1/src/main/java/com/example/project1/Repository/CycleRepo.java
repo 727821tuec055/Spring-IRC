@@ -30,5 +30,26 @@ public interface CycleRepo extends JpaRepository<CycleModel, Integer>
 	@Transactional
 	@Query(value="update cycleshowroom set cid=:id where cname=:name",nativeQuery=true)
 	public void updateByQuery(@Param("id")int id,@Param("name") String name);
+     
+	 // get by name using query 
+	@Query("select c from CycleModel c where cname=?1")
+	public List<CycleModel> getjpqlname(String name);
+     
+	// query for getting the details by name
+	@Query("select c from CycleModel c where cid between ?1 and ?2")
+	public List<CycleModel> getbtw(int start, int end);
+     
+	// delete by query using id
+	@Modifying
+	@Transactional
+	@Query("delete from CycleModel where id=?1")
+	public void deletejpqlid(int id);
+	
+	 //update the query
+	@Modifying
+	@Transactional
+	@Query("update CycleModel set cnum=?1 where id=?2")
+
+	public void updatejpql(String a, int b);
 }
 
