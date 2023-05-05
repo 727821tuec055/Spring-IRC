@@ -11,7 +11,7 @@ import com.example.project1.Model.CycleModel;
 import jakarta.transaction.Transactional;
 public interface CycleRepo extends JpaRepository<CycleModel, Integer> 
 {
-    
+    //Native Queries
     @Query(value="Select * from cycleshowroom",nativeQuery=true)
 	public List<CycleModel> getAllData();
 	
@@ -31,6 +31,8 @@ public interface CycleRepo extends JpaRepository<CycleModel, Integer>
 	@Query(value="update cycleshowroom set cid=:id where cname=:name",nativeQuery=true)
 	public void updateByQuery(@Param("id")int id,@Param("name") String name);
      
+	//JPQL Queries
+	
 	 // get by name using query 
 	@Query("select c from CycleModel c where cname=?1")
 	public List<CycleModel> getjpqlname(String name);

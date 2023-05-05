@@ -10,12 +10,12 @@ import io.swagger.v3.oas.annotations.info.Info;
 @SpringBootApplication
 @OpenAPIDefinition(
 		 info =@Info(
-		 title = "MaX Games",
+		 title = "Cycle",
 		 version = "1.1.2",
-		 description = "Game Hub Project",
+		 description = "Cycle Project",
 		 contact = @Contact(
-		 name = "MaX",
-		 email = "kratos@max.io"
+		 name = "Janani",
+		 email = "jananiseenu17@gmail.com"
 		 )
 		 )
 		 )
