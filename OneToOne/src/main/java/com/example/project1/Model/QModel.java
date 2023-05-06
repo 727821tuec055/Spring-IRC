@@ -13,6 +13,8 @@ public class QModel {
 @Id
 private int quesno;
 private String ques;
+
+//one to many
 @OneToMany(cascade=CascadeType.ALL)
 @JoinColumn
 private List<AModel> ans;
