@@ -51,7 +51,6 @@ public interface CycleRepo extends JpaRepository<CycleModel, Integer>
 	@Modifying
 	@Transactional
 	@Query("update CycleModel set cnum=?1 where id=?2")
-
-	public void updatejpql(String a, int b);
+    public void updatejpql(String a, int b);
 }
 
